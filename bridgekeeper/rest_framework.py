@@ -1,4 +1,7 @@
+from __future__ import print_function, absolute_import
+
 from logging import getLogger
+import sys
 
 from bridgekeeper import perms
 from django.core.exceptions import ImproperlyConfigured
@@ -128,7 +131,8 @@ class BridgekeeperRESTMixin:
         :rtype: bridgekeeper.rules.Rule
         """
         name = self.get_permission_name(request, view, obj)
-        print(name, flush=True)
+        print(name)
+        sys.stdout.flush()
         try:
             return perms[name]
         except KeyError:
