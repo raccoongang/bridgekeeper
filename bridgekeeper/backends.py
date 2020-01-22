@@ -13,7 +13,7 @@ class RulePermissionBackend:
             permission_map = global_permission_map
         self.permission_map = permission_map
 
-    def authenticate(self, **kwargs):
+    def authenticate(self, request, **kwargs):
         # We don't actually want to handle authentication in
         # this backend.
         pass
